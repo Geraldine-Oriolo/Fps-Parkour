@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DeteccionDeCaida : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class DeteccionDeCaida : MonoBehaviour
      if (transform.position.y < -25)
      {
         Debug.Log("Me caí");
+        SceneManager.LoadScene("FPSParkour");
      }
 
 
