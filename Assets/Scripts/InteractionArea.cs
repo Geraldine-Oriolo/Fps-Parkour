@@ -27,18 +27,28 @@ public class InteractionArea : MonoBehaviour
             } else if (moneyManager.money < mercancia.cost)
             {
                 Debug.Log("No te alcanza");
-            }
-            void OnTriggerEnter (Collider other)
-            {
-                Debug.Log(other.gameObject.name);
-                mercancia = other.GetComponent<MoneyScript>();
-                if (mercancia)
-                {
-                    interactionMessage.SetActive(true);
-                        }
-                }
-            }
-         
+            }         
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log(other.gameObject.name);
+        mercancia = other.GetComponent<MoneyScript>();
+        if (mercancia)
+        {
+            interactionMessage.SetActive(true);
+        }
+
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        interactionMessage.SetActive(false);
+        mercancia = null;
+    }
+    void StopInteraction()
+    {
+        interactionMessage.SetActive(false);
+        mercancia = null;
     }
 }
