@@ -13,7 +13,7 @@ public class MoneyScript : MonoBehaviour
         moneyManager = FindObjectOfType<MoneyManager>();
     }
     
-    void OnCollisionEnter(Collision collision)
+   /* void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -22,5 +22,5 @@ public class MoneyScript : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-    }
+    }*/
 }
